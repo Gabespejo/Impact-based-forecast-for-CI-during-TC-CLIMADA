@@ -46,13 +46,23 @@ cent.check()
 
 This code is set within the region of study, which in this case corresponds to Madagascar (MDG).
 
-## Time Steps
-
-[Explain the time steps or intervals used in the project, including any considerations or reasons for choosing them.]
-
 ## Factor Intensity
 
-[Describe the factor intensity analysis in the project, including the factors considered and their impact on the analysis.]
+**tc_intensity_10min(tc_object, factor)**
+
+"""
+    Modifies the intensity of a TropCyclone object.
+
+    Parameters:
+    tc_object: TropCyclone object to be modified.
+    factor: The factor by which to multiply the intensity.
+
+    Returns:
+    Modified TropCyclone object.
+    """
+For the vulnerability curve from the Deltares Institute (Global Facility for Disaster Reduction and Recovery, 2023). It is needed to use this factor conversion.
+
+
 
 ## Exposure
 
