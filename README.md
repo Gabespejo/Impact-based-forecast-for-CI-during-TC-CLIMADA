@@ -179,10 +179,36 @@ event = 'TC Freddy'
 filename= "/cluster/project/climate/gespejo/MDG_struc_plots_Freddy/MDG_20230216180000_strucimpforecast_imph2.jpg"
 plotting_tracks = plot_tracks(ens_variables ['ens_FREDDY_20230216180000'],exp_longitude,exp_latitude,exp_impact,exp_levels,filename)
 ```
+## INDIRECT IMPACTS 
+
+To calculate the nearest population affected when a hospital is disrupted, the following function has been developed.
+
+calculate_nearest_population(geodisrupt_gdf, pop_gdf):
 
 
+    """
+    Calculate the nearest population point for each entry in GeoDataFrames within geodisrupt2_dfs.
 
+    Parameters:
+    - geodisrupt_gdf: Dictionary of GeoDataFrames where nearest population will be calculated for each entry.
+    - pop_gdf: GeoDataFrame representing population data.
 
-## Contact
+    Returns:
+    - geodisrupt_gdf: Dictionary of updated GeoDataFrames with nearest population index and affected population.
+    """
 
-[Provide contact information for questions, feedback, or collaboration opportunities.]
+In the case that we want to determine the nearest population affected beyond the threshold of disruption when an infrastructure fails, the function **cal_nearestpop_disrup** should be used.
+
+cal_nearestpop_disrup(geodisrupt_gdf, disrupt_data_gdf):
+    """
+    Calculate the nearest population point for each entry in GeoDataFrames within geodisrupt_gdf
+    using the corresponding GeoDataFrames in disrupt_data_gdf.
+
+    Parameters:
+    - geodisrupt_gdf: Dictionary of GeoDataFrames where nearest population will be calculated for each entry.
+    - disrupt_data_gdf: Dictionary of GeoDataFrames representing population data for different days.
+
+    Returns:
+    - geodisrupt_gdf: Dictionary of updated GeoDataFrames with nearest population index and affected population.
+    """
+
