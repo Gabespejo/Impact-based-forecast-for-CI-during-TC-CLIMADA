@@ -67,7 +67,7 @@ For the vulnerability curve from the Deltares Institute (Global Facility for Dis
 In this part in order to work with the exposure data, it is needed to put the location of your data. To download the Openstreetmap data, you should follow
 the instructions from https://github.com/CLIMADA-project/climada_petals/blob/main/doc/tutorial/climada_exposures_openstreetmap.ipynb
 
-"""
+"""python
 
 PATH_DATA = '/cluster/project/climate/gespejo/data/infrastructure/'
 
