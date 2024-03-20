@@ -11,20 +11,21 @@ better understand the significance of these impacts, we further assess their ind
 ## Structure
 The scripts consist in: 
 - Hazard data (Fetching the forecast) ECMWF 51 ensemble members (IFS Cycle 47r3)
-- Exposure data
+- Exposure data:
   Hospitals, Educational facilities, roads
   Worldpop (UN adjust 2020)
-- Impact Function/ vulnerability
+- Impact Function/ vulnerability:
   Eberenz et. al (2021) & Deltares Institute (Global Facility for Disaster Reduction and Recovery, 2023)
   Saffir Simpson hurricane wind scale
 
-## Data
-
-[Describe the data used in the project, including its source, format, and any preprocessing steps.]
-
 ## Forecast Fetching
 
-[Explain how forecasting is performed in the project, including any algorithms, methodologies, or models used.]
+This function in the code look for the files that correspond to the event that we want to analyze. In order to use this function, you should have the files in your own computer or server.
+fetch_multiple_ecmwf_data(base_folder, start_date, end_date, event_name)
+base_folder= "/cluster/project/climate/gespejo/data/TC_0012"  change this path with your own data
+start_date = datetime(2023,2,16,18,0) refers to the start of the event; year,month,day,UTC 
+end_date = datetime(2023, 2,21,18, 0)  refers to the end of the event; year,month,day,UTC 
+event_name = "FREDDY"  refers to the name of the event. In this case is FREDDY
 
 ## Centroids
 
