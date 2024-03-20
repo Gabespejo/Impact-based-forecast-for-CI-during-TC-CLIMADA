@@ -20,16 +20,31 @@ The scripts consist in:
 
 ## Forecast Fetching
 
-This function in the code look for the files that correspond to the event that we want to analyze. In order to use this function, you should have the files in your own computer or server.
-fetch_multiple_ecmwf_data(base_folder, start_date, end_date, event_name)
-base_folder= "/cluster/project/climate/gespejo/data/TC_0012"  change this path with your own data
-start_date = datetime(2023,2,16,18,0) refers to the start of the event; year,month,day,UTC 
-end_date = datetime(2023, 2,21,18, 0)  refers to the end of the event; year,month,day,UTC 
-event_name = "FREDDY"  refers to the name of the event. In this case is FREDDY
+This function in the code look for the files that correspond to the event that we want to analyze. In order to use this function, you should have the files in your own computer or server
+
+**fetch_multiple_ecmwf_data(base_folder, start_date, end_date, event_name)**
+
+- base_folder= "/cluster/project/climate/gespejo/data/TC_0012"  change this path with your own data.
+
+- start_date = datetime(2023,2,16,18,0) refers to the start of the event; year,month,day,UTC. 
+
+- end_date = datetime(2023, 2,21,18, 0)  refers to the end of the event; year,month,day,UTC. 
+
+- event_name = "FREDDY"  refers to the name of the event. In this case is FREDDY.
+
+In our case we are using a lead time of 5 days. 
 
 ## Centroids
 
-[Discuss the centroids used in the project, their significance, and how they are determined.]
+**from climada.hazard import Centroids**
+
+min_lat, max_lat, min_lon, max_lon = -27,-10, 42, 52
+
+cent = Centroids.from_pnt_bounds((min_lon, min_lat, max_lon, max_lat), res=0.12)
+
+cent.check()
+
+This code is set within the region of study, which in this case corresponds to Madagascar (MDG).
 
 ## Time Steps
 
