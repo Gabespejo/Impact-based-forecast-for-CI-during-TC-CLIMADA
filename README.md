@@ -111,9 +111,46 @@ In the class **ImpFuncsCIWindMoz** we set a total of 5 impact functions.
 
 <img src="summary_impactfunctions.jpg"  alt="Image Alt Text" width="300"/>
 
-## Contributors
+## Impact calculations 
 
-[List the contributors to the project, including their roles or contributions.]
+The impact calculations are performed using this model code. The country code can be changed to the corresponding country, such as MDG, MOZ, or REU. imph1 is the list where the impact calculations per day are saved. This same structure of code has been applied for educational facilities and roads, which have been disaggregated into geometric points. Once it is done, we used the calc_mean_for_impdict(impact_dict) this function to calculate the mean value over the 51 ensemble members. 
+
+```python
+import copy
+from climada.engine import Impact  
+
+# Specify the country code
+country_code = 'MDG'
+
+# Initialize a dictionary to store all impact objects with their respective names
+imph1 = {}
+
+# Your tc_names and other required parameters must be defined before this section of the code 
+# Ensure that all necessary data and objects are adequately initialized.
+
+# Iterate through track variables
+for track_name_variable in tc_names:
+    
+    # Create a copy of the GeoDataFrame for health data based on the specified country
+    if country_code == 'MDG':
+        gdf_health_df = copy.deepcopy(gdf_health_MDG)
+    else:
+        # Handle other countries as needed
+        pass
+
+    # Assuming 'track_name_variable' is the key in tc_names dictionary, referring to track objects
+    track_obj = tc_names[track_name_variable]
+
+    # Create Impact objects and calculate impacts for impact1
+    impact_var_name1 = f'imph1_{country_code}_{track_name_variable}'  # Customized name for impact1
+    
+    # Initialize and calculate the Impact object
+    impact1_obj = Impact()
+    impact1_obj.calc(eval(f'exp_h1_{country_code}'), impf_set_tc, track_obj, save_mat=True)
+    
+    # Add the impact object to the dictionary with its name as the key
+    imph1[impact_var_name1] = impact1_obj
+```
 
 ## Acknowledgments
 
