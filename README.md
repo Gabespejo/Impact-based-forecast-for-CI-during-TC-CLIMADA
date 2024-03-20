@@ -109,7 +109,7 @@ World Bank Group - International Development, Poverty, 2014). The classification
 
 In the class **ImpFuncsCIWindMoz** we set a total of 5 impact functions. 
 
-<img src="summary_impactfunctions.jpg"  alt="Image Alt Text" width="200"/>
+<img src="summary_impactfunctions.jpg"  alt="Image Alt Text" width="300"/>
 
 ## Contributors
 
