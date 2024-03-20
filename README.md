@@ -67,23 +67,15 @@ For the vulnerability curve from the Deltares Institute (Global Facility for Dis
 In this part in order to work with the exposure data, it is needed to put the location of your data. To download the Openstreetmap data, you should follow
 the instructions from https://github.com/CLIMADA-project/climada_petals/blob/main/doc/tutorial/climada_exposures_openstreetmap.ipynb
 
-"""python
-
+```python
 PATH_DATA = '/cluster/project/climate/gespejo/data/infrastructure/'
-
 PATH_DATA_OSM = '/cluster/work/climate/gespejo/climada/data/openstreetmap/' # path to search for osm.pbf files and to download to if not existing
-
 PATH_DATA_HVMV = PATH_DATA +'power_global/grid.gpkg' # path of this file from gridfinder (It needs to be downloaded).
-
 PATH_DATA_PP = PATH_DATA +'power_global/global_power_plant_database.csv' # path of this file from WRI global power plant db. (It needs to be downloaded).
-
-#PATH_DATA_CT = PATH_DATA +'cell_towers/opencellid_global_1km_int.tif' # path of this file from worldbank open data gridded celltowers (It needs to be downloaded)
-
+PATH_DATA_CT = PATH_DATA +'cell_towers/opencellid_global_1km_int.tif' # path of this file from worldbank open data gridded celltowers (It needs to be downloaded)
 PATH_DATA_POP = PATH_DATA + 'population/' # path to search for population files and to download to if not existing
-
 PATH_SAVE = '/cluster/project/climate/gespejo/data/infrastructure/Madagascar_results_'
-
-"""
+```
 
 ## Cleaning exposure data & Classification of the Hospitals for levels 
 
