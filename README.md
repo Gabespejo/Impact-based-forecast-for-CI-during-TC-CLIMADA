@@ -93,11 +93,23 @@ PATH_SAVE = '/cluster/project/climate/gespejo/data/infrastructure/Madagascar_res
 
 **find_remove_duplicates(orig_gdf)**  here in a single function does both actions, first look for the duplicates and then remove them. 
 
+Each geometric point includes latitude, longitude, value, amenity, as well as the names of hospitals, schools, roads, etc. In the case of health facilities, a categorization of hospital types
+is established. The initial data was provided by OpenStreetMap. This categorization was then updated based on reports developed by the Deltares Institute, documents from the World Bank’s
+Health Sector, and the Strategic Health Plan of Mozambique, which helped us to establish the
+criteria for this classification.(Global Facility for Disaster Reduction and Recovery, 2023; Ministerio
+da Saude - Republica de Mozambique, 2007; “Plan de developpement du secteur sante”, 2020-2024;
+World Bank Group - International Development, Poverty, 2014). The classification consists:
+
+1. Level 1: clinics in rural areas
+2. Level 2: rural hospitals with higher population coverage
+3. Level 3:hospitals with provincial coverage
+4. Level 4: hospitals located in urban areas
+
+## Impact Functions / Vulnerability 
+
+In the class **ImpFuncsCIWindMoz** we set a total of 5 impact functions. 
 
 
-## License
-
-[Specify the license under which the project is distributed.]
 
 ## Contributors
 
