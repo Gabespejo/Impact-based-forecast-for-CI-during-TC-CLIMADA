@@ -156,6 +156,31 @@ for track_name_variable in tc_names:
 
 For this map, we have developed two functions: **ext_col_categories(exp_instance, date_forecast)** and **extract_points_to_plot(exposures_dict, exp_key, date_forecast, event_date)**. The first function extracts the columns that correspond to the impact per day calculated previously. The second function, which operates in dependence on ext_col_categories, extracts the points per day and calculates the lead time based on the start and end of the event.
 
+```python
+# Using the extract_points_to_plot function: to extract the most important data from the geometric points. exposures_dict corresponds to the dictionary containing the exposures, imph1 to the dictionary with the impact values. '20230216180000' denotes the start of the event, and '20230221180000' denotes the end of the event.
+
+p_imph1_plot = extract_points_to_plot(exposures_dict, 'imph1','20230216180000','20230221180000')
+p_imph2_plot = extract_points_to_plot(exposures_dict, 'imph2','20230216180000','20230221180000')
+
+# Extracting values from points_to_plot
+exp_longitude = p_imph1_plot['longitude']
+exp_latitude = p_imph1_plot['latitude']
+exp_impact = p_imph1_plot['impact_data'] ['impact']
+exp_levels = p_imph1_plot['level_data']
+lead_time = p_imph1_plot ['lead_time']
+```
+Once it is done, then the function plot_tracks can be used: 
+
+```python
+plot_tracks(tc_tracks, exp_lon, exp_lat, exp_value,exp_level,figure_filename):
+
+tc_tracks = tens_variables ['ens_FREDDY_20230216180000']
+event = 'TC Freddy'
+filename= "/cluster/project/climate/gespejo/MDG_struc_plots_Freddy/MDG_20230216180000_strucimpforecast_imph2.jpg"
+plotting_tracks = plot_tracks(ens_variables ['ens_FREDDY_20230216180000'],exp_longitude,exp_latitude,exp_impact,exp_levels,filename)
+```
+
+
 
 
 ## Contact
