@@ -62,15 +62,38 @@ This code is set within the region of study, which in this case corresponds to M
     """
 For the vulnerability curve from the Deltares Institute (Global Facility for Disaster Reduction and Recovery, 2023). It is needed to use this factor conversion.
 
-
-
 ## Exposure
 
-[Discuss the exposure analysis in the project, including the types of exposure considered and their relevance.]
+In this part in order to work with the exposure data, it is needed to put the location of your data. To download the Openstreetmap data, you should follow
+the instructions from https://github.com/CLIMADA-project/climada_petals/blob/main/doc/tutorial/climada_exposures_openstreetmap.ipynb
 
-## Usage
+"""
 
-[Provide instructions on how to use the project, including any setup steps, dependencies, or commands.]
+PATH_DATA = '/cluster/project/climate/gespejo/data/infrastructure/'
+
+PATH_DATA_OSM = '/cluster/work/climate/gespejo/climada/data/openstreetmap/' # path to search for osm.pbf files and to download to if not existing
+
+PATH_DATA_HVMV = PATH_DATA +'power_global/grid.gpkg' # path of this file from gridfinder (It needs to be downloaded).
+
+PATH_DATA_PP = PATH_DATA +'power_global/global_power_plant_database.csv' # path of this file from WRI global power plant db. (It needs to be downloaded).
+
+#PATH_DATA_CT = PATH_DATA +'cell_towers/opencellid_global_1km_int.tif' # path of this file from worldbank open data gridded celltowers (It needs to be downloaded)
+
+PATH_DATA_POP = PATH_DATA + 'population/' # path to search for population files and to download to if not existing
+
+PATH_SAVE = '/cluster/project/climate/gespejo/data/infrastructure/Madagascar_results_'
+
+"""
+
+## Cleaning exposure data & Classification of the Hospitals for levels 
+
+**_find_duplicates(overlap_gdf)**  look for the duplicate points 
+
+**_remove_duplicates(orig_gdf, indices_dupl)**  remove the duplicates points 
+
+**find_remove_duplicates(orig_gdf)**  here in a single function does both actions, first look for the duplicates and then remove them. 
+
+
 
 ## License
 
