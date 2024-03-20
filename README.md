@@ -152,9 +152,11 @@ for track_name_variable in tc_names:
     imph1[impact_var_name1] = impact1_obj
 ```
 
-## Acknowledgments
+## Plotting impact based forecast maps per day 
 
-[Optional section to acknowledge any individuals, organizations, or resources that contributed to the project.]
+For this map, we have developed two functions: **ext_col_categories(exp_instance, date_forecast)** and **extract_points_to_plot(exposures_dict, exp_key, date_forecast, event_date)**. The first function extracts the columns that correspond to the impact per day calculated previously. The second function, which operates in dependence on ext_col_categories, extracts the points per day and calculates the lead time based on the start and end of the event.
+
+
 
 ## Contact
 
